@@ -1,3 +1,5 @@
+![test](https://github.com/pierrelemee/molecule-parser/workflows/test/badge.svg)
+
 # molecule-parser
 
 Python library to flatten a molecule formula into an atoms dictionary
