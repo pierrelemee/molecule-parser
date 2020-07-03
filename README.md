@@ -27,7 +27,7 @@ In addition, you can specify two options:
 Examples:
 
 ```bash
-$ cat formulas.txt | pipenv run python main.py 'O((CN2)3K)4'
+$ pipenv run python main.py 'O((CN2)3K)4'
 {'O': 1, 'K': 4, 'C': 12, 'N': 24}
 # Parse formulas from formulas.txt file and encode as JSON 
 $ cat formulas.txt | pipenv run python main.py --stdin -j
