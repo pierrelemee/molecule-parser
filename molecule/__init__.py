@@ -1,4 +1,5 @@
-from .molecule_parser import MoleculeParser
-from .molecule_node import MoleculeNode
+from molecule.molecule_parser import MoleculeParser
+from molecule.molecule import Molecule
+from molecule.atom import Atom
 
-__all__ = [MoleculeNode, MoleculeParser]
+__all__ = [MoleculeParser, Molecule, Atom]

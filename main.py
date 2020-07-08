@@ -15,8 +15,6 @@ if __name__ == '__main__':
         else:
             formulas.append(arg)
 
-
-
     if read_from_stdin:
         formulas = list(map(lambda line: line.rstrip(), sys.stdin.readlines()))
 
