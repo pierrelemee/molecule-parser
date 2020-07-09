@@ -11,7 +11,8 @@ class ParserTest(TestCase):
             'Mg(OH)2': {'Mg': 1, 'O': 2, 'H': 2},  # magnesium_hydroxide
             'K4[ON(SO3)2]2': {'K': 4, 'O': 14, 'N': 2, 'S': 4},  # fremy_salt
             'O((CN2)3K)4': {'O': 1, 'N': 24, 'C': 12, 'K': 4},  # Invention 1
-            '[{(Mn7)}]': {'Mn': 7}  # Invention 2
+            '[{(Mn7)}]': {'Mn': 7},  # Invention 2
+            '(CH3)(NH4)2ON3(CO2)': {'C': 2, 'H': 11, 'N': 5, 'O': 3}
         }
 
         for formula, atoms in molecules.items():
@@ -19,10 +20,10 @@ class ParserTest(TestCase):
 
     def test_parsing_ko(self):
         formulas = {
-            'notaformula': "Unexpected character 'n' at index 0",
-            ')(': "Unexpected character ')' at index 0",
-            '[ HN02)}': "Unclosed bracket character '[' at index 0 in formula '[ HN02)}'",
-            '[{((Mn7)}]': "Unclosed bracket character '(' at index 3"  # Invention 1
+            'notaformula': "Unexpected character 'n' at index 0 in formula 'notaformula'",
+            ')(': "Unexpected closing bracket ')' at index 0 in formula ')('",
+            '[HN02)}': "Unexpected closing bracket ')', expecting ']' opened at 0 at index 5 in formula '[HN02)}'",
+            '[{(Mn7))}]': "Unexpected closing bracket ')', expecting '}' opened at 1 at index 7 in formula '[{(Mn7))}]'"
         }
 
         for formula, message in formulas.items():
