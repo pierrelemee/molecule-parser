@@ -20,5 +20,5 @@ jobs:
     - name: Pipenv install
       run: pipenv install
 
-    - name: Run uni tests
+    - name: Run unit tests
       run: pipenv run python -m unittest tests/*.py
